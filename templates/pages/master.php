@@ -7,10 +7,11 @@
 			<link rel='stylesheet' type='text/css' href='stylesheet/css/no-script.css' />
 		</noscript>
 
+		<link rel='icon' type='image/x-icon' href='images/icon.ico' />
 		<link href="https://fonts.googleapis.com/css?family=Dosis|Indie+Flower|Mirza" rel="stylesheet">
 		<link rel='stylesheet' type='text/css' href='stylesheet/css/normalize.css' />
 		<link rel='stylesheet' type='text/css' href='stylesheet/css/flexboxgrid.min.css' />
-		<link rel='stylesheet' type='text/css' href='stylesheet/css/style.css' />
+		<link rel='stylesheet' type='text/css' href='stylesheet/css/style.css?v=<?=time();?>' />
 
 		<script src='js/libs/jquery.js'></script>
 	</head>

@@ -8,24 +8,119 @@
 	EDIT WITH DESIRED DESIGN
 	#591.23
 */
-html{
-	height: 100%;
-}
 .main-content{
 	background-color: #EFEFEF;
 	color: #525252;
 	padding: 60px 50px;
+
+	.instructions {
+		width: 50%;
+		margin: 0 auto 50px auto;
+	}
+	.entry-fields {
+		width: 75%;
+		margin: 0 auto 50px auto;
+		position: relative;
+
+		.container-new-field {
+			width: 275px;
+			position: relative;
+			left: 75%;
+			border: 2px solid #d8d8d8;
+			background-color: #e2e2e2;
+			border-radius: 15px;
+
+			span {
+				display: block;
+				margin: 5px 0;
+				position: relative;
+				left: 5%;
+				width: 90%;
+				font-weight: bold;
+			}
+			.options-new-field {
+				margin: 0 15px;
+
+				div {
+					display: inline-block;
+					padding: 2px 5px;
+					width: 65px;
+					text-align: center;
+
+					&.video {
+						color: #00cd00;
+					}
+					&.audio {
+						color: #0000cd;
+					}
+					&.subtitle {
+						color: #cd0000;
+					}
+					&:hover {
+						cursor: pointer;
+						background-color: #d8d8d8;
+					}
+				}
+
+			}
+		}
+		.container-fields {
+			.field {
+				margin: 5px 0;
+				.field-title {
+					width: 150px;
+					font-weight: bold;
+					display: inline-block;
+				}
+				.track-name, .track-default, .track-language {
+					width: 0;
+					border: 2px solid #d8d8d8;
+					margin: 0;
+					padding: 0;
+				}
+				.track-name {
+					width: 200px;
+					padding: 5px;
+				}
+				.track-default {
+					width: 75px;
+					padding: 5px;
+				}
+				.track-language {
+					width: 150px;
+					padding: 5px;
+				}
+				.remove {
+					margin-left: 10px;
+					color: red;
+					font-weight: bold;
+				}
+			}
+		}
+	}
+	.output-field {
+
+	}
 }
 .header {
 	color: #F3F4F5;
 	background-color: #27313C;
 	box-shadow: 1px 2px 2px rgba(0, 0, 0, 0.15);
 	padding: 20px 40px;
-	position: fixed;
-	z-index: 10;
-	right: 0;
-	left: 0;
-	top: 0;
+	position: relative;
+
+	.logo {
+		height: 150px;
+	}
+	.phrase {
+		position: absolute;
+		right: 20px;
+	}
+	.presets {
+		position: absolute;
+		right: 20px;
+		bottom: 20px;
+	}
 }
 .footer{
 	color: #F3F4F5;
