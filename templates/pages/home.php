@@ -76,10 +76,10 @@
 		</div>
 	</div>
 
-	<div class='output-field'>
-		<textarea></textarea>
-		<div>SAVE</div>
-		<div>COPY TO CLIPBOARD</div>
+	<div class='output-fields'>
+		<textarea class='output-text'></textarea>
+		<div class='button save'>SAVE</div>
+		<div class='button copy'>COPY TO CLIPBOARD</div>
 	</div>
 </div>
 
