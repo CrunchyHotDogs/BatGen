@@ -14,7 +14,7 @@
 		<link rel='stylesheet' type='text/css' href='stylesheet/css/style.css?v=<?=time();?>' />
 
 		<script src='js/libs/jquery.js'></script>
-		<script src='js/libs/dot.js'></script>
+		<script src='js/libs/handlebars-v4.0.10.js'></script>
 	</head>
 	<body>
 		<noscript>
