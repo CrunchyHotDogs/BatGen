@@ -12,7 +12,7 @@
 	</div>
 
 	<div class='entry-fields'>
-		<div class='container-new-field'>
+		<div class='container-new-field no-select'>
 			<span>New Fields</span>
 			<div class='options-new-field'>
 				<div id='newFieldVideo' class='video'>Video</div>
@@ -20,7 +20,7 @@
 				<div id='newFieldSubtitle' class='subtitle'>Subtitles</div>
 			</div>
 		</div>
-		<div id='container-fields' class='container-fields'>
+		<div id='containerFields' class='container-fields'>
 			<div class='field-header'>
 				<span></span>
 				<span>Track Name</span>
@@ -30,12 +30,15 @@
 			</div>
 
 		</div>
+		<div id='fieldNumbers' class='field-numbers'>
+
+		</div>
 	</div>
 
 	<div class='output-fields'>
 		<textarea id='outputText' class='output-text' spellcheck='false'></textarea>
-		<div class='button save'>SAVE</div>
-		<div class='button copy'>COPY TO CLIPBOARD</div>
+		<div id='buttonSave' class='button save'>SAVE</div>
+		<div id='buttonCopy' class='button copy'>COPY TO CLIPBOARD</div>
 	</div>
 </div>
 
@@ -97,23 +100,23 @@
 		<span class='remove' data-guidDelete='{{guid}}'>X</span>
 	</div>
 </script>
-
+<script id='templateNumber' type='text/x-handlebars-template'>
+		<div class='number no-select' data-trackNumber='{{trackNumber}}'>{{number}}</div>
+</script>
 
 
 <script>
-	var templateVideo = $('#templateVideo').html();
-	var templateAudio = $('#templateAudio').html();
-	var templateSubtitle = $('#templateSubtitle').html();
-
-	var templateVideo_Script = Handlebars.compile(templateVideo);
-	var templateAudio_Script = Handlebars.compile(templateAudio);
-	var templateSubtitle_Script = Handlebars.compile(templateSubtitle);
-
+	Sortable.create(fieldNumbers, {
+		onEnd: function() {
+			createOutput()
+		}
+	});
 	var existingFields = [];
 
 	var counterVideo = 1;
 	var counterAudio = 1;
 	var counterSubtitle = 1;
+	var counterNumbers = 1;
 
 
 
@@ -126,46 +129,71 @@
 	$('#newFieldSubtitle').click(function() {
 		createField_Subtitle();
 	});
+	$('#buttonSave').click(function() {
+		var blob = new Blob([$('#outputText').val()], {type: "text/plain;charset=utf-8"});
+		saveAs(blob, "batgen.bat");
+	});
+	$('#buttonCopy').click(function() {
+		$('#outputText').select();
+		document.execCommand('copy');
+	});
 
 
 	function createField_Video() {
+		var templateVideo = $('#templateVideo').html();
+		var templateVideo_Script = Handlebars.compile(templateVideo);
 		var uid = guid();
 		existingFields.push(uid);
 		var data = {'track_number':counterVideo, 'guid':uid};
 		var html = templateVideo_Script(data);
-		$('#container-fields').append(html);
+		$('#containerFields').append(html);
 
+		createNumbers();
 		createHandlers();
 		createOutput();
 		counterVideo++;
 	}
 	function createField_Audio() {
+		var templateAudio = $('#templateAudio').html();
+		var templateAudio_Script = Handlebars.compile(templateAudio);
 		var uid = guid();
 		existingFields.push(uid);
 		var data = {'track_number':counterAudio, 'guid':uid};
 		var html = templateAudio_Script(data);
-		$('#container-fields').append(html);
+		$('#containerFields').append(html);
 
+		createNumbers();
 		createHandlers();
 		createOutput();
 		counterAudio++;
 	}
 	function createField_Subtitle() {
+		var templateSubtitle = $('#templateSubtitle').html();
+		var templateSubtitle_Script = Handlebars.compile(templateSubtitle);
 		var uid = guid();
 		existingFields.push(uid);
 		var data = {'track_number':counterSubtitle, 'guid':uid};
 		var html = templateSubtitle_Script(data);
-		$('#container-fields').append(html);
+		$('#containerFields').append(html);
 
-		$('.track-name').keyup(function() {
-			createOutput();
-		});
-
+		createNumbers();
 		createHandlers();
 		createOutput();
 		counterSubtitle++;
 	}
 
+	function createNumbers() {
+		var templateNumber = $('#templateNumber').html();
+		var templateNumber_Script = Handlebars.compile(templateNumber);
+		var data = {'number':counterNumbers,'trackNumber':counterNumbers-1};
+		var html = templateNumber_Script(data);
+		$('#fieldNumbers').append(html);
+		counterNumbers++;
+	}
+	function removeNumbers() {
+
+		counterNumbers--;
+	}
 	function createHandlers() {
 		$('.track-name').keyup(function() {
 			createOutput();
@@ -221,8 +249,12 @@
 				bat += ' --forced-track ' + index + ':' + tForced;
 			}
 		});
-		bat += ' "%fi%" --track-order 0:0,0:2,0:1,0:3 --title "Dragon Ball Z - Episode %episode% - %ep_name%"\n';
-
+		bat += ' "%fi%" --track-order ';
+		$('div.number').each(function() {
+			bat += '0:' + this.dataset.tracknumber + ',';
+		});
+		bat = bat.slice(0,-1);
+		bat += ' --title "Dragon Ball Z - Episode %episode% - %ep_name%"\n';
 
 		bat += 'goto :eof';
 		$('#outputText').text(bat);

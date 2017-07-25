@@ -15,6 +15,9 @@
 
 		<script src='js/libs/jquery.js'></script>
 		<script src='js/libs/handlebars-v4.0.10.js'></script>
+		<script src='js/libs/FileSaver.js'></script>
+		<script src='js/libs/Blob.js'></script>
+		<script src='js/libs/Sortable.js'></script>
 	</head>
 	<body>
 		<noscript>

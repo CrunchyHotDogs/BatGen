@@ -1,4 +1,4 @@
-<header class='header font-dosis'>
+<header class='header font-dosis no-select'>
 	<img class='logo' src='images/BatGen Logo.png' />
 	<span class='phrase'>A CrunchyHotDogs' Production</span>
 	<div class='presets'>
