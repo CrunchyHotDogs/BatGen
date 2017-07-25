@@ -15,12 +15,19 @@
 		<div class='container-new-field'>
 			<span>New Fields</span>
 			<div class='options-new-field'>
-				<div class='video'>Video</div>
-				<div class='audio'>Audio</div>
-				<div class='subtitle'>Subtitles</div>
+				<div id='newFieldVideo' class='video'>Video</div>
+				<div id='newFieldAudio' class='audio'>Audio</div>
+				<div id='newFieldSubtitle' class='subtitle'>Subtitles</div>
 			</div>
 		</div>
 		<div id='container-fields' class='container-fields'>
+			<div class='field-header'>
+				<span></span>
+				<span>Track Name</span>
+				<span>Default</span>
+				<span>Language</span>
+				<span>Forced</span>
+			</div>
 			<div class='field video'>
 				<span class='field-title'>Video Track 1</span>
 				<input class='track-name' type='text' placeholder="Track Name"></input>

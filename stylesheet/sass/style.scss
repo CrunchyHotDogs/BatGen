@@ -65,6 +65,25 @@
 			}
 		}
 		.container-fields {
+			padding-top: 25px;
+
+			.field-header {
+				* {
+					display: inline-block;
+				}
+				*:nth-child(1) {
+					width: 150px;
+				}
+				*:nth-child(2) {
+					width: 215px;
+				}
+				*:nth-child(3) {
+					width: 77px
+				}
+				*:nth-child(4) {
+					width: 150px;
+				}
+			}
 			.field {
 				margin: 5px 0;
 				.field-title {
@@ -95,6 +114,9 @@
 					margin-left: 10px;
 					color: red;
 					font-weight: bold;
+					&:hover {
+						cursor: pointer;
+					}
 				}
 			}
 		}
