@@ -20,6 +20,10 @@
 				<div id='newFieldSubtitle' class='subtitle'>Subtitles</div>
 			</div>
 		</div>
+		<div class='file-information'>
+			<label for='fileTitle'>File Title</label>
+			<input id='fileTitle' name='fileTitle' type='text' />
+		</div>
 		<div id='containerFields' class='container-fields'>
 			<div class='field-header'>
 				<span></span>
@@ -137,6 +141,9 @@
 		$('#outputText').select();
 		document.execCommand('copy');
 	});
+	$('#fileTitle').keyup(function() {
+		createOutput();
+	})
 
 
 	function createField_Video() {
@@ -221,6 +228,7 @@
 	}
 
 	function createOutput() {
+		var tTrackTitle = $('#fileTitle').val();
 		var bat = 	'setlocal DisableDelayedExpansion\n' +
 						'set mkvmerge="C:/Program Files/MKVToolNix/mkvmerge.exe"\n' +
 						'set output_folder="C:\\OutputFolder"\n' +
@@ -254,7 +262,7 @@
 			bat += '0:' + this.dataset.tracknumber + ',';
 		});
 		bat = bat.slice(0,-1);
-		bat += ' --title "Dragon Ball Z - Episode %episode% - %ep_name%"\n';
+		bat += ' --title "' + tTrackTitle + '"\n';
 
 		bat += 'goto :eof';
 		$('#outputText').text(bat);
