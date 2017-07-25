@@ -28,58 +28,7 @@
 				<span>Language</span>
 				<span>Forced</span>
 			</div>
-			<div class='field video'>
-				<span class='field-title'>Video Track 1</span>
-				<input class='track-name' type='text' placeholder="Track Name"></input>
-				<select class='track-default'>
-					<option value="yes">Yes</option>
-					<option value="no">No</option>
-				</select>
-				<select class='track-language'>
-					<option value="und">Undefined</option>
-					<option value="eng">English</option>
-					<option value="jpn">Japanese</option>
-					<option value="spa">Spanish</option>
-					<option value="fra">French</option>
-				</select>
-				<span class='remove'>X</span>
-			</div>
-			<div class='field audio'>
-				<span class='field-title'>Audio Track 1</span>
-				<input class='track-name' type='text' placeholder="Track Name"></input>
-				<select class='track-default'>
-					<option value="yes">Yes</option>
-					<option value="no">No</option>
-				</select>
-				<select class='track-language'>
-					<option value="und">Undefined</option>
-					<option value="eng">English</option>
-					<option value="jpn">Japanese</option>
-					<option value="spa">Spanish</option>
-					<option value="fra">French</option>
-				</select>
-				<span class='remove'>X</span>
-			</div>
-			<div class='field subtitle'>
-				<span class='field-title'>Subtitle Track 1</span>
-				<input class='track-name' type='text' placeholder="Track Name"></input>
-				<select class='track-default'>
-					<option value="yes">Yes</option>
-					<option value="no">No</option>
-				</select>
-				<select class='track-language'>
-					<option value="und">Undefined</option>
-					<option value="eng">English</option>
-					<option value="jpn">Japanese</option>
-					<option value="spa">Spanish</option>
-					<option value="fra">French</option>
-				</select>
-				<select class='track-default'>
-					<option value="yes">Yes</option>
-					<option value="no">No</option>
-				</select>
-				<span class='remove'>X</span>
-			</div>
+
 		</div>
 	</div>
 
@@ -90,9 +39,76 @@
 	</div>
 </div>
 
+<script id='templateVideo' type='text/x-handlebars-template'>
+	<div class='field video'>
+		<span class='field-title'>Video Track {{track_number}}</span>
+		<input class='track-name' type='text' placeholder="Track Name"></input>
+		<select class='track-default'>
+			<option value="yes">Yes</option>
+			<option value="no">No</option>
+		</select>
+		<select class='track-language'>
+			<option value="und">Undefined</option>
+			<option value="eng">English</option>
+			<option value="jpn">Japanese</option>
+			<option value="spa">Spanish</option>
+			<option value="fra">French</option>
+		</select>
+		<span class='remove'>X</span>
+	</div>
+</script>
+<script id='templateAudio' type='text/x-handlebars-template'>
+	<div class='field audio'>
+		<span class='field-title'>Audio Track 1</span>
+		<input class='track-name' type='text' placeholder="Track Name"></input>
+		<select class='track-default'>
+			<option value="yes">Yes</option>
+			<option value="no">No</option>
+		</select>
+		<select class='track-language'>
+			<option value="und">Undefined</option>
+			<option value="eng">English</option>
+			<option value="jpn">Japanese</option>
+			<option value="spa">Spanish</option>
+			<option value="fra">French</option>
+		</select>
+		<span class='remove'>X</span>
+	</div>
+</script>
+<script id='templateSubtitle' type='text/x-handlebars-template'>
+	<div class='field subtitle'>
+		<span class='field-title'>Subtitle Track 1</span>
+		<input class='track-name' type='text' placeholder="Track Name"></input>
+		<select class='track-default'>
+			<option value="yes">Yes</option>
+			<option value="no">No</option>
+		</select>
+		<select class='track-language'>
+			<option value="und">Undefined</option>
+			<option value="eng">English</option>
+			<option value="jpn">Japanese</option>
+			<option value="spa">Spanish</option>
+			<option value="fra">French</option>
+		</select>
+		<select class='track-default'>
+			<option value="yes">Yes</option>
+			<option value="no">No</option>
+		</select>
+		<span class='remove'>X</span>
+	</div>
+</script>
+
+
 
 <script>
-	
+	var template = $('#templateVideo').html();
+	var templateScript = Handlebars.compile(template);
+
+	var data = {'track_number': 3};
+
+	var html = templateScript(data);
+	$('#container-fields').append(html);
+
 
 
 </script>
