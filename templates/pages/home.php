@@ -242,7 +242,7 @@
 						'set ep_name=%ep:~9%\n' +
 						'set ep_num=%ep:~4,2%\n' +
 						'set ep_seas=%ep:~2,1%\n' +
-						'call %mkvmerge% -o "%output_folder%\%ep%.mkv"';
+						'call %mkvmerge% -o "%output_folder%\\%ep%.mkv"';
 
 
 		$.each(existingFields, function(index, value) {
