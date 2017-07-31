@@ -1,6 +1,6 @@
 # BatGen
-##BatGen (FOR VIDEOS). A small website that generates batch files based on options the user chooses. Currently only supports .mkv.
-A working example can be found at this address. (batgen-kcprojects.rhcloud.com)
+## BatGen (FOR VIDEOS). A small website that generates batch files based on options the user chooses. Currently only supports .mkv.
+### A working example can be found at this address. (https://batgen-kcprojects.rhcloud.com)
 
 
 I was getting annoyed at having to create a new batch file for every series I would want to re-tag, so I decided to create BatGen.
