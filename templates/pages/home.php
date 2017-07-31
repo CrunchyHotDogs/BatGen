@@ -231,7 +231,7 @@
 		var tTrackTitle = $('#fileTitle').val();
 		var bat = 	'setlocal DisableDelayedExpansion\n' +
 						'set mkvmerge="C:/Program Files/MKVToolNix/mkvmerge.exe"\n' +
-						'set output_folder="%cd%\\Muxing\\"\n' +
+						'set output_folder=%cd%\\Muxing\\\n' +
 						'for /r %%a in (*.mkv) do (\n' +
  						'	set fi=%%a\n' +
 						'	set ep=%%~na\n' +
