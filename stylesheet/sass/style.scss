@@ -64,6 +64,47 @@
 
 			}
 		}
+		.container-options {
+			width: 275px;
+			position: relative;
+			left: 75%;
+			border: 2px solid #d8d8d8;
+			background-color: #e2e2e2;
+			border-radius: 15px;
+			margin-top: 5px;
+
+			span {
+				display: block;
+				margin: 5px 0;
+				position: relative;
+				left: 5%;
+				width: 90%;
+				font-weight: bold;
+			}
+
+			.options {
+				margin: 0 15px;
+
+				div {
+					display: inline-block;
+					padding: 2px 5px;
+					width: 90%;
+					label {
+						margin-right: 15px;
+					}
+					input[type='text'] {
+						border: 2px solid #d8d8d8;
+						outline: none;
+						padding: 0;
+						width: 50px;
+					}
+					input[type=checkbox] {
+
+					}
+				}
+			}
+
+		}
 		.file-information {
 			position: absolute;
 			top: 0;

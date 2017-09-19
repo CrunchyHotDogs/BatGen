@@ -12,12 +12,31 @@
 	</div>
 
 	<div class='entry-fields'>
-		<div class='container-new-field no-select'>
-			<span>New Fields</span>
-			<div class='options-new-field'>
-				<div id='newFieldVideo' class='video'>Video</div>
-				<div id='newFieldAudio' class='audio'>Audio</div>
-				<div id='newFieldSubtitle' class='subtitle'>Subtitles</div>
+		<div class='right-side'>
+			<div class='container-new-field no-select'>
+				<span>New Fields</span>
+				<div class='options-new-field'>
+					<div id='newFieldVideo' class='video'>Video</div>
+					<div id='newFieldAudio' class='audio'>Audio</div>
+					<div id='newFieldSubtitle' class='subtitle'>Subtitles</div>
+				</div>
+			</div>
+			<div class='container-options no-select'>
+				<span>Options</span>
+				<div class='options'>
+					<div class='episode-counter'>
+						<label for='direct-episode-counter'>Episode Counter</label>
+						<input id='direct-episode-start' name='direct-episode-start' type='text' value='01' />
+					</div>
+					<div class='count-episode-tens'>
+						<label>Count Episodes (10s)</label>
+						<input id='episode-tens' name='count-episode-tens' type='checkbox' />
+					</div>
+					<div class='count-episode-hundreds'>
+						<label>Count Episodes (100s)</label>
+						<input id='episode-hundreds' name='episode-hundreds' type='checkbox' />
+					</div>
+				</div>
 			</div>
 		</div>
 		<div class='file-information'>
@@ -143,7 +162,20 @@
 	});
 	$('#fileTitle').keyup(function() {
 		createOutput();
-	})
+	});
+	$('#episode-tens').change(function() {
+		createOutput();
+	});
+	$('#episode-hundreds').change(function() {
+		if ($('#episode-hundreds').is(':checked')) {
+			$('#episode-tens').prop('checked',true);
+		}
+		createOutput();
+
+	});
+	$('#direct-episode-start').keyup(function() {
+		createOutput();
+	});
 
 
 	function createField_Video() {
@@ -232,7 +264,18 @@
 		var bat = 	'setlocal DisableDelayedExpansion\n' +
 						'set mkvmerge="C:/Program Files/MKVToolNix/mkvmerge.exe"\n' +
 						'set "output_folder=%cd%\\Muxing"\n' +
-						'for /r %%a in (*.mkv) do (\n' +
+						'set counter=' + $('#direct-episode-start').val() + '\n';
+
+			if ($('#episode-hundreds').is(':checked')) {
+				bat += 	'set ep_hundreds=99\n' +
+							'set ep_tens=9\n';
+			}
+			else if ($('#episode-tens').is(':checked')) {
+				bat +=	'set ep_tens=9\n';
+			}
+
+
+		bat +=	 	'for /r %%a in (*.mkv) do (\n' +
  						'	set fi=%%a\n' +
 						'	set ep=%%~na\n' +
 						'	call :merge\n' +
@@ -263,6 +306,25 @@
 		});
 		bat = bat.slice(0,-1);
 		bat += ' --title "' + tTrackTitle + '"\n';
+		bat += 	'set /a counter=10000%counter% %% 10000\n' +
+					'set /a "counter=%counter%+1"\n';
+
+		if ($('#episode-hundreds').is(':checked')) {
+			bat += 	'if %counter% GTR %ep_hundreds% (\n' +
+						'set counter=%counter%\n' +
+						') else if %counter% GTR %ep_tens% (\n' +
+						'set counter=0%counter%\n' +
+						') else (\n' +
+						'set counter=00%counter%\n' +	
+						')\n'
+		}
+		else if ($('#episode-tens').is(':checked')) {
+			bat +=	'if %counter% GTR %ep_tens% (\n' +
+						'set counter=%counter%\n' +
+						') else (\n' +
+						'set counter=0%counter%\n' +
+						')\n';
+		}
 
 		bat += 'goto :eof';
 		$('#outputText').text(bat);
