@@ -36,6 +36,10 @@
 						<label>Count Episodes (100s)</label>
 						<input id='episode-hundreds' name='episode-hundreds' type='checkbox' />
 					</div>
+					<div class='count-episode-thousands'>
+						<label>Count Episodes (1000s)</label>
+						<input id='episode-thousands' name='episode-thousands' type='checkbox' />
+					</div>
 				</div>
 			</div>
 		</div>
@@ -171,7 +175,13 @@
 			$('#episode-tens').prop('checked',true);
 		}
 		createOutput();
-
+	});
+	$('#episode-thousands').change(function() {
+		if ($('#episode-thousands').is(':checked')) {
+			$('#episode-tens').prop('checked',true);
+			$('#episode-hundreds').prop('checked',true);
+		}
+		createOutput();
 	});
 	$('#direct-episode-start').keyup(function() {
 		createOutput();
@@ -264,15 +274,10 @@
 		var bat = 	'setlocal DisableDelayedExpansion\n' +
 						'set mkvmerge="C:/Program Files/MKVToolNix/mkvmerge.exe"\n' +
 						'set "output_folder=%cd%\\Muxing"\n' +
-						'set counter=' + $('#direct-episode-start').val() + '\n';
-
-			if ($('#episode-hundreds').is(':checked')) {
-				bat += 	'set ep_hundreds=99\n' +
-							'set ep_tens=9\n';
-			}
-			else if ($('#episode-tens').is(':checked')) {
-				bat +=	'set ep_tens=9\n';
-			}
+						'set counter=' + $('#direct-episode-start').val() + '\n' +
+						'set ep_thousands=999\n' +
+						'set ep_hundreds=99\n' +
+						'set ep_tens=9\n';
 
 
 		bat +=	 	'for /r %%a in (*.mkv) do (\n' +
@@ -309,13 +314,24 @@
 		bat += 	'set /a counter=10000%counter% %% 10000\n' +
 					'set /a "counter=%counter%+1"\n';
 
-		if ($('#episode-hundreds').is(':checked')) {
+		if ($('#episode-thousands').is(':checked')) {
+			bat += 	'if %counter% GTR %ep_thousands% (\n' +
+						'set counter=%counter%\n' +
+						') else if %counter% GTR %ep_hundreds% (\n' +
+						'set counter=0%counter%\n' +
+						') else if %counter% GTR %ep_tens% (\n' +
+						'set counter=00%counter%\n' +
+						') else (\n' +
+						'set counter=000%counter%\n' +
+						')\n'
+		}
+		else if ($('#episode-hundreds').is(':checked')) {
 			bat += 	'if %counter% GTR %ep_hundreds% (\n' +
 						'set counter=%counter%\n' +
 						') else if %counter% GTR %ep_tens% (\n' +
 						'set counter=0%counter%\n' +
 						') else (\n' +
-						'set counter=00%counter%\n' +	
+						'set counter=00%counter%\n' +
 						')\n'
 		}
 		else if ($('#episode-tens').is(':checked')) {
