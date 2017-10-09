@@ -287,9 +287,13 @@
 						')\n' +
 						'goto :eof;\n\n' +
 						':merge\n' +
-						'set ep_name=%ep:~9%\n' +
-						'set ep_num=%ep:~4,2%\n' +
-						'set ep_seas=%ep:~2,1%\n' +
+						'for /F "tokens=1* delims=- " %%A in ("%ep%") do (\n' +
+						'	set "ep_name=%%B"\n' +
+						'	for /F "tokens=1,2 delims=ES" %%C in ("%%A") do (\n' +
+						'		set "ep_seas=%%C"\n' +
+						'		set "ep_num=%%D"\n' +
+						'	)\n' +
+						')\n' +
 						'call %mkvmerge% -o "%output_folder%\\%ep%.mkv"';
 
 
