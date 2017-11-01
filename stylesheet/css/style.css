@@ -126,18 +126,23 @@
   width: 50px;
 }
 
-/* line 108, C:/Games-And-Stuff/#Server/GitHub/BatchGenerator/stylesheet/sass/style.scss */
+/* line 100, C:/Games-And-Stuff/#Server/GitHub/BatchGenerator/stylesheet/sass/style.scss */
+.main-content .entry-fields .container-options .options div input[type='text']:focus {
+  border: 2px solid #add8e6;
+}
+
+/* line 111, C:/Games-And-Stuff/#Server/GitHub/BatchGenerator/stylesheet/sass/style.scss */
 .main-content .entry-fields .file-information {
   position: absolute;
   top: 0;
 }
 
-/* line 112, C:/Games-And-Stuff/#Server/GitHub/BatchGenerator/stylesheet/sass/style.scss */
+/* line 115, C:/Games-And-Stuff/#Server/GitHub/BatchGenerator/stylesheet/sass/style.scss */
 .main-content .entry-fields .file-information label {
   font-weight: bold;
 }
 
-/* line 115, C:/Games-And-Stuff/#Server/GitHub/BatchGenerator/stylesheet/sass/style.scss */
+/* line 118, C:/Games-And-Stuff/#Server/GitHub/BatchGenerator/stylesheet/sass/style.scss */
 .main-content .entry-fields .file-information input {
   width: 400px;
   border: 2px solid #d8d8d8;
@@ -146,49 +151,54 @@
   padding: 5px;
 }
 
-/* line 123, C:/Games-And-Stuff/#Server/GitHub/BatchGenerator/stylesheet/sass/style.scss */
+/* line 124, C:/Games-And-Stuff/#Server/GitHub/BatchGenerator/stylesheet/sass/style.scss */
+.main-content .entry-fields .file-information input:focus {
+  border: 2px solid #add8e6;
+}
+
+/* line 129, C:/Games-And-Stuff/#Server/GitHub/BatchGenerator/stylesheet/sass/style.scss */
 .main-content .entry-fields .container-fields {
   padding-top: 25px;
 }
 
-/* line 127, C:/Games-And-Stuff/#Server/GitHub/BatchGenerator/stylesheet/sass/style.scss */
+/* line 133, C:/Games-And-Stuff/#Server/GitHub/BatchGenerator/stylesheet/sass/style.scss */
 .main-content .entry-fields .container-fields .field-header * {
   display: inline-block;
 }
 
-/* line 130, C:/Games-And-Stuff/#Server/GitHub/BatchGenerator/stylesheet/sass/style.scss */
+/* line 136, C:/Games-And-Stuff/#Server/GitHub/BatchGenerator/stylesheet/sass/style.scss */
 .main-content .entry-fields .container-fields .field-header *:nth-child(1) {
   width: 150px;
 }
 
-/* line 133, C:/Games-And-Stuff/#Server/GitHub/BatchGenerator/stylesheet/sass/style.scss */
+/* line 139, C:/Games-And-Stuff/#Server/GitHub/BatchGenerator/stylesheet/sass/style.scss */
 .main-content .entry-fields .container-fields .field-header *:nth-child(2) {
   width: 215px;
 }
 
-/* line 136, C:/Games-And-Stuff/#Server/GitHub/BatchGenerator/stylesheet/sass/style.scss */
+/* line 142, C:/Games-And-Stuff/#Server/GitHub/BatchGenerator/stylesheet/sass/style.scss */
 .main-content .entry-fields .container-fields .field-header *:nth-child(3) {
   width: 77px;
 }
 
-/* line 139, C:/Games-And-Stuff/#Server/GitHub/BatchGenerator/stylesheet/sass/style.scss */
+/* line 145, C:/Games-And-Stuff/#Server/GitHub/BatchGenerator/stylesheet/sass/style.scss */
 .main-content .entry-fields .container-fields .field-header *:nth-child(4) {
   width: 150px;
 }
 
-/* line 143, C:/Games-And-Stuff/#Server/GitHub/BatchGenerator/stylesheet/sass/style.scss */
+/* line 149, C:/Games-And-Stuff/#Server/GitHub/BatchGenerator/stylesheet/sass/style.scss */
 .main-content .entry-fields .container-fields .field {
   margin: 5px 0;
 }
 
-/* line 145, C:/Games-And-Stuff/#Server/GitHub/BatchGenerator/stylesheet/sass/style.scss */
+/* line 151, C:/Games-And-Stuff/#Server/GitHub/BatchGenerator/stylesheet/sass/style.scss */
 .main-content .entry-fields .container-fields .field .field-title {
   width: 150px;
   font-weight: bold;
   display: inline-block;
 }
 
-/* line 150, C:/Games-And-Stuff/#Server/GitHub/BatchGenerator/stylesheet/sass/style.scss */
+/* line 156, C:/Games-And-Stuff/#Server/GitHub/BatchGenerator/stylesheet/sass/style.scss */
 .main-content .entry-fields .container-fields .field .track-name, .main-content .entry-fields .container-fields .field .track-default, .main-content .entry-fields .container-fields .field .track-language, .main-content .entry-fields .container-fields .field .track-forced {
   width: 0;
   border: 2px solid #d8d8d8;
@@ -197,43 +207,48 @@
   padding: 0;
 }
 
-/* line 157, C:/Games-And-Stuff/#Server/GitHub/BatchGenerator/stylesheet/sass/style.scss */
+/* line 162, C:/Games-And-Stuff/#Server/GitHub/BatchGenerator/stylesheet/sass/style.scss */
+.main-content .entry-fields .container-fields .field .track-name:focus, .main-content .entry-fields .container-fields .field .track-default:focus, .main-content .entry-fields .container-fields .field .track-language:focus, .main-content .entry-fields .container-fields .field .track-forced:focus {
+  border: 2px solid #add8e6;
+}
+
+/* line 166, C:/Games-And-Stuff/#Server/GitHub/BatchGenerator/stylesheet/sass/style.scss */
 .main-content .entry-fields .container-fields .field .track-name {
   width: 200px;
   padding: 5px;
 }
 
-/* line 161, C:/Games-And-Stuff/#Server/GitHub/BatchGenerator/stylesheet/sass/style.scss */
+/* line 170, C:/Games-And-Stuff/#Server/GitHub/BatchGenerator/stylesheet/sass/style.scss */
 .main-content .entry-fields .container-fields .field .track-default, .main-content .entry-fields .container-fields .field .track-forced {
   width: 75px;
   padding: 5px;
 }
 
-/* line 165, C:/Games-And-Stuff/#Server/GitHub/BatchGenerator/stylesheet/sass/style.scss */
+/* line 174, C:/Games-And-Stuff/#Server/GitHub/BatchGenerator/stylesheet/sass/style.scss */
 .main-content .entry-fields .container-fields .field .track-language {
   width: 150px;
   padding: 5px;
 }
 
-/* line 169, C:/Games-And-Stuff/#Server/GitHub/BatchGenerator/stylesheet/sass/style.scss */
+/* line 178, C:/Games-And-Stuff/#Server/GitHub/BatchGenerator/stylesheet/sass/style.scss */
 .main-content .entry-fields .container-fields .field .remove {
   margin-left: 10px;
   color: red;
   font-weight: bold;
 }
 
-/* line 173, C:/Games-And-Stuff/#Server/GitHub/BatchGenerator/stylesheet/sass/style.scss */
+/* line 182, C:/Games-And-Stuff/#Server/GitHub/BatchGenerator/stylesheet/sass/style.scss */
 .main-content .entry-fields .container-fields .field .remove:hover {
   cursor: pointer;
 }
 
-/* line 179, C:/Games-And-Stuff/#Server/GitHub/BatchGenerator/stylesheet/sass/style.scss */
+/* line 188, C:/Games-And-Stuff/#Server/GitHub/BatchGenerator/stylesheet/sass/style.scss */
 .main-content .entry-fields .field-numbers {
   width: 65%;
   margin: 20px auto 0 auto;
 }
 
-/* line 183, C:/Games-And-Stuff/#Server/GitHub/BatchGenerator/stylesheet/sass/style.scss */
+/* line 192, C:/Games-And-Stuff/#Server/GitHub/BatchGenerator/stylesheet/sass/style.scss */
 .main-content .entry-fields .field-numbers .number {
   display: inline-block;
   font-weight: bold;
@@ -243,13 +258,13 @@
   border-radius: 25%;
 }
 
-/* line 190, C:/Games-And-Stuff/#Server/GitHub/BatchGenerator/stylesheet/sass/style.scss */
+/* line 199, C:/Games-And-Stuff/#Server/GitHub/BatchGenerator/stylesheet/sass/style.scss */
 .main-content .entry-fields .field-numbers .number:hover {
   cursor: pointer;
   background-color: #d8d8d8;
 }
 
-/* line 197, C:/Games-And-Stuff/#Server/GitHub/BatchGenerator/stylesheet/sass/style.scss */
+/* line 206, C:/Games-And-Stuff/#Server/GitHub/BatchGenerator/stylesheet/sass/style.scss */
 .main-content .output-fields {
   width: 50%;
   height: 450px;
@@ -257,7 +272,7 @@
   margin: 0 auto;
 }
 
-/* line 203, C:/Games-And-Stuff/#Server/GitHub/BatchGenerator/stylesheet/sass/style.scss */
+/* line 212, C:/Games-And-Stuff/#Server/GitHub/BatchGenerator/stylesheet/sass/style.scss */
 .main-content .output-fields .output-text {
   width: 98.5%;
   height: 400px;
@@ -267,7 +282,12 @@
   outline: none;
 }
 
-/* line 211, C:/Games-And-Stuff/#Server/GitHub/BatchGenerator/stylesheet/sass/style.scss */
+/* line 219, C:/Games-And-Stuff/#Server/GitHub/BatchGenerator/stylesheet/sass/style.scss */
+.main-content .output-fields .output-text:focus {
+  border: 2px solid #add8e6;
+}
+
+/* line 223, C:/Games-And-Stuff/#Server/GitHub/BatchGenerator/stylesheet/sass/style.scss */
 .main-content .output-fields .button {
   display: inline-block;
   font-weight: bold;
@@ -283,27 +303,27 @@
   border-right: 2px solid #d8d8d8;
 }
 
-/* line 226, C:/Games-And-Stuff/#Server/GitHub/BatchGenerator/stylesheet/sass/style.scss */
+/* line 238, C:/Games-And-Stuff/#Server/GitHub/BatchGenerator/stylesheet/sass/style.scss */
 .main-content .output-fields .button.save {
   position: absolute;
   left: 0;
   border-bottom-left-radius: 25px;
 }
 
-/* line 231, C:/Games-And-Stuff/#Server/GitHub/BatchGenerator/stylesheet/sass/style.scss */
+/* line 243, C:/Games-And-Stuff/#Server/GitHub/BatchGenerator/stylesheet/sass/style.scss */
 .main-content .output-fields .button.copy {
   position: absolute;
   right: 1px;
   border-bottom-right-radius: 25px;
 }
 
-/* line 236, C:/Games-And-Stuff/#Server/GitHub/BatchGenerator/stylesheet/sass/style.scss */
+/* line 248, C:/Games-And-Stuff/#Server/GitHub/BatchGenerator/stylesheet/sass/style.scss */
 .main-content .output-fields .button:hover {
   cursor: pointer;
   background-color: #d8d8d8;
 }
 
-/* line 243, C:/Games-And-Stuff/#Server/GitHub/BatchGenerator/stylesheet/sass/style.scss */
+/* line 255, C:/Games-And-Stuff/#Server/GitHub/BatchGenerator/stylesheet/sass/style.scss */
 .header {
   color: #F3F4F5;
   background-color: #27313C;
@@ -312,25 +332,25 @@
   position: relative;
 }
 
-/* line 250, C:/Games-And-Stuff/#Server/GitHub/BatchGenerator/stylesheet/sass/style.scss */
+/* line 262, C:/Games-And-Stuff/#Server/GitHub/BatchGenerator/stylesheet/sass/style.scss */
 .header .logo {
   height: 150px;
 }
 
-/* line 253, C:/Games-And-Stuff/#Server/GitHub/BatchGenerator/stylesheet/sass/style.scss */
+/* line 265, C:/Games-And-Stuff/#Server/GitHub/BatchGenerator/stylesheet/sass/style.scss */
 .header .phrase {
   position: absolute;
   right: 20px;
 }
 
-/* line 257, C:/Games-And-Stuff/#Server/GitHub/BatchGenerator/stylesheet/sass/style.scss */
+/* line 269, C:/Games-And-Stuff/#Server/GitHub/BatchGenerator/stylesheet/sass/style.scss */
 .header .presets {
   position: absolute;
   right: 20px;
   bottom: 20px;
 }
 
-/* line 263, C:/Games-And-Stuff/#Server/GitHub/BatchGenerator/stylesheet/sass/style.scss */
+/* line 275, C:/Games-And-Stuff/#Server/GitHub/BatchGenerator/stylesheet/sass/style.scss */
 .footer {
   color: #F3F4F5;
   background-color: #292c2f;
@@ -347,7 +367,7 @@
 	STAYS THE SAME
 	#11211
 */
-/* line 280, C:/Games-And-Stuff/#Server/GitHub/BatchGenerator/stylesheet/sass/style.scss */
+/* line 292, C:/Games-And-Stuff/#Server/GitHub/BatchGenerator/stylesheet/sass/style.scss */
 body {
   min-width: 1100px;
   display: flex;
@@ -355,12 +375,12 @@ body {
   height: 100%;
 }
 
-/* line 286, C:/Games-And-Stuff/#Server/GitHub/BatchGenerator/stylesheet/sass/style.scss */
+/* line 298, C:/Games-And-Stuff/#Server/GitHub/BatchGenerator/stylesheet/sass/style.scss */
 .main-content {
   flex: 1 0 auto;
 }
 
-/* line 289, C:/Games-And-Stuff/#Server/GitHub/BatchGenerator/stylesheet/sass/style.scss */
+/* line 301, C:/Games-And-Stuff/#Server/GitHub/BatchGenerator/stylesheet/sass/style.scss */
 .footer, .header {
   flex: 0 0 auto;
 }
@@ -372,27 +392,27 @@ body {
 	MY DEFAULT STYLES
 	#1034.02
 */
-/* line 301, C:/Games-And-Stuff/#Server/GitHub/BatchGenerator/stylesheet/sass/style.scss */
+/* line 313, C:/Games-And-Stuff/#Server/GitHub/BatchGenerator/stylesheet/sass/style.scss */
 .font-dosis {
   font-family: 'Dosis', sans-serif;
 }
 
-/* line 304, C:/Games-And-Stuff/#Server/GitHub/BatchGenerator/stylesheet/sass/style.scss */
+/* line 316, C:/Games-And-Stuff/#Server/GitHub/BatchGenerator/stylesheet/sass/style.scss */
 .font-indieflower {
   font-family: 'Indie Flower', cursive;
 }
 
-/* line 307, C:/Games-And-Stuff/#Server/GitHub/BatchGenerator/stylesheet/sass/style.scss */
+/* line 319, C:/Games-And-Stuff/#Server/GitHub/BatchGenerator/stylesheet/sass/style.scss */
 .font-mirza {
   font-family: 'Mirza', cursive;
 }
 
-/* line 310, C:/Games-And-Stuff/#Server/GitHub/BatchGenerator/stylesheet/sass/style.scss */
+/* line 322, C:/Games-And-Stuff/#Server/GitHub/BatchGenerator/stylesheet/sass/style.scss */
 .clear {
   clear: both;
 }
 
-/* line 313, C:/Games-And-Stuff/#Server/GitHub/BatchGenerator/stylesheet/sass/style.scss */
+/* line 325, C:/Games-And-Stuff/#Server/GitHub/BatchGenerator/stylesheet/sass/style.scss */
 .no-select {
   -webkit-touch-callout: none;
   -webkit-user-select: none;
@@ -401,7 +421,7 @@ body {
   user-select: none;
 }
 
-/* line 320, C:/Games-And-Stuff/#Server/GitHub/BatchGenerator/stylesheet/sass/style.scss */
+/* line 332, C:/Games-And-Stuff/#Server/GitHub/BatchGenerator/stylesheet/sass/style.scss */
 .hidden {
   display: none !important;
 }
