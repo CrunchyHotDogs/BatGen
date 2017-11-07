@@ -1,6 +1,6 @@
 # BatGen
 ## BatGen (FOR VIDEOS). A small website that generates batch files based on options the user chooses. Currently only supports .mkv.
-### A working example can be found at this address. (http://batgen-batgen.193b.starter-ca-central-1.openshiftapps.com)
+### A working version can be found at this address. (http://batgen-batgen.193b.starter-ca-central-1.openshiftapps.com)
 
 
 I was getting annoyed at having to create a new batch file for every series I would want to re-tag, so I decided to create BatGen.
@@ -48,3 +48,26 @@ The end result will look like this in MKVToolNix.
 
 Hopefully this helps everyone use BatGen. I have tried to make this fairly simple to use but if you come across any problems or get
 stuck, feel free to create an issue here on GitHub and I can assist you.
+
+## Options and Variables
+### Can Be Used Anywhere
+Below I will go over the different options that are available.
+
+| Variable  | Information Used |
+| ------------- | ------------- |
+| %ep_name%  |  S01E01 - **EPISODE TITLE**  |
+| %ep_seas%  |  S**01**E01 - EPISODE TITLE  |
+| %ep_num  |  S01E**01** - EPISODE TITLE  |
+|  |   |
+| %counter%  | Increments with each file. (See **Counter** section) |
+
+### Counter Option
+The counter option will use absolute numbering. For each file that is remuxed, the counter will increase by 1.
+
+There are a few options to go with counter, I will list them in a table.
+
+| Count Episodes  | Episode Layout For Episode 5 |
+| ------------- | ------------- |
+| (10s)  |  05  |
+| (100s)  |  005  |
+| (1000s)  |  0005  |
