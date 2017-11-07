@@ -61,7 +61,7 @@ Below I will go over the different options that are available.
 |  |   |
 | %counter%  | Increments with each file. (See **Counter** section) |
 
-### Counter Option
+### Counter
 The counter option will use absolute numbering. For each file that is remuxed, the counter will increase by 1.
 
 There are a few options to go with counter, I will list them in a table.
@@ -71,3 +71,11 @@ There are a few options to go with counter, I will list them in a table.
 | (10s)  |  05  |
 | (100s)  |  005  |
 | (1000s)  |  0005  |
+
+### Re-Ordering Tracks
+At the end of the track list, you will see numbers corresponding to how many tracks you have. You can drag these to re-arrange the order of the tracks.
+The track values apply to the original position of the tracks, not the re-arranged positions.
+
+For example, say your tracks go [VIDEO], [SUBTITLE], [AUDIO]. You would like these tracks to be in the order [VIDEO], [AUDIO], [SUBTITLE].
+You would move the number 2 and switch positions with the number 3.
+
