@@ -1,6 +1,6 @@
 # BatGen
 ## BatGen (FOR VIDEOS). A small website that generates batch files based on options the user chooses. Currently only supports .mkv.
-### A working example can be found at this address. (https://batgen-kcprojects.rhcloud.com)
+### A working example can be found at this address. (http://batgen-batgen.193b.starter-ca-central-1.openshiftapps.com)
 
 
 I was getting annoyed at having to create a new batch file for every series I would want to re-tag, so I decided to create BatGen.
@@ -10,7 +10,7 @@ is MKVMergeGUI.
 
 As seen in this screenshot, the video file has the video, audio, and subtitle tracks. To set up BatGen for this file you would add
 one of each track type.
-
+![alt text](https://imgur.com/aPb84aj)
 
 If done correctly BatGen should look like the screenshot below.
 
