@@ -6,7 +6,7 @@
 I was getting annoyed at having to create a new batch file for every series I would want to re-tag, so I decided to create BatGen.
 BatGen allows you to choose which tracks you have in the video and add tag information to them. A useful program to see the tracks
 is MKVMergeGUI.
-![Image #1](https://i.imgur.com/aPb84aj.png)
+![Image #1](https://i.imgur.com/DSaR3mG.png)
 
 As seen in this screenshot, the video file has the video, audio, and subtitle tracks. To set up BatGen for this file you would add
 one of each track type.
