@@ -1,13 +1,7 @@
 <div class='home-page'>
 	<div class='instructions'>
 		<span>
-			Works best with a program that can see what tracks are included in a video file (MKVMerge, MediaInfo).
-			Find out how many tracks are in the video file, and add fields equal to that amount. You can set the names, language, and default/forced tags.
-
-			<br/><br/>
-
-			Once all fields are set, just save the .bat file and run within a folder containing the videos you wish to tag. The script will run
-			and when it's done you will have new tagged files.
+			A readme can be found here <a href='https://github.com/CrunchyHotDogs/BatGen' target='_blank'>BatGen</a>.
 		</span>
 	</div>
 
