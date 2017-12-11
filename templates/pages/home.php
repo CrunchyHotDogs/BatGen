@@ -1,10 +1,4 @@
 <div class='home-page'>
-	<div class='instructions'>
-		<span>
-			A readme can be found here <a href='https://github.com/CrunchyHotDogs/BatGen' target='_blank'>BatGen</a>.
-		</span>
-	</div>
-
 	<div class='entry-fields'>
 		<div class='right-side'>
 			<div class='container-new-field no-select'>
